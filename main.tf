@@ -55,8 +55,8 @@ resource "proxmox_virtual_environment_vm" "this" {
   }
 
   network_device {
-    bridge  = var.net_device["bridge"]
-    vlan_id = var.net_device["vlan"]
+    bridge  = var.net_interface["bridge"]
+    vlan_id = var.net_interface["vlan"]
   }
 
   operating_system {
