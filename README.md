@@ -85,3 +85,5 @@ module "proxmox_instance" {
   export PROXMOX_VE_SSH_AGENT=true
   export PROXMOX_VE_SSH_USERNAME=''
 ```
+
+The provider does not use OS-specific SSH configuration files, such as `~/.ssh/config`. Instead, it uses the SSH protocol directly, and supports the `SSH_AUTH_SOCK` environment variable (or `agent_socket` argument) to connect to the `ssh-agent`. This allows the provider to use the SSH agent configured by the user, and to support multiple SSH agents running on the same machine. You can find more details on the SSH Agent [here](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys#adding-your-ssh-keys-to-an-ssh-agent-to-avoid-typing-the-passphrase). The SSH agent authentication takes precedence over the `private_key` and `password` authentication.
