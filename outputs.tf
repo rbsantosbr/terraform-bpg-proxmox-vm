@@ -1,5 +1,8 @@
 output "vm_ip_address" {
-  value = proxmox_virtual_environment_vm.this.ipv4_addresses[1][0]
+  value = try(
+    flatten(proxmox_virtual_environment_vm.this.ipv4_addresses)[0],
+    ""
+  )
 }
 
 output "vm_id" {
