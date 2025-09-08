@@ -1,6 +1,6 @@
 output "vm_ip_address" {
   value = try(
-    flatten(proxmox_virtual_environment_vm.this.ipv4_addresses)[0],
+    flatten(proxmox_virtual_environment_vm.this.ipv4_addresses)[1],
     ""
   )
 }
