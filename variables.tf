@@ -91,7 +91,7 @@ variable "ipv4" {
 variable "snippet" {
   description = "User data - Cloud init"
   type        = string
-  default     = "none"
+  default     = null
 }
 
 variable "net_interface" {
