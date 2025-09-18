@@ -7,3 +7,7 @@ terraform {
   }
   required_version = ">= 0.13"
 }
+
+provider "proxmox" {
+  random_vm_ids = true
+}

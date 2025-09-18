@@ -24,6 +24,7 @@ variable "nodename" {
 variable "vm_id" {
   description = "Proxmox vm id"
   type        = string
+  default     = null
 }
 
 variable "cpu" {
